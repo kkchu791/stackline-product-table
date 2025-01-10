@@ -1,0 +1,44 @@
+.container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 90%;
+  background: white;
+}
+
+.productImage {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.productName {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: gray;
+  padding: 20px;
+}
+
+.productTags {
+  padding: 20px;
+  display: flex;
+  margin: 10px;
+}
+
+.tag {
+  border: 1px solid rgb(99, 99, 99);
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  margin: 10px; 
+  border-radius: 5px
+  ;
+}
