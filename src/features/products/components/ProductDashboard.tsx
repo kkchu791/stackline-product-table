@@ -13,7 +13,6 @@ const ProductDashboard = () => {
   const product = products && products[0];
   
   useEffect(() => {
-    console.log("is mounted")
     dispatch(fetchProductsAsync());
   }, [dispatch]);
 
