@@ -1,14 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import data from './data/data.json';
 
-// Review interface for the product reviews
 interface Review {
   customer: string;
   review: string;
   score: number;
 }
 
-// Sales interface for the sales data
 interface Sales {
   weekEnding: string;
   retailSales: number;
@@ -17,7 +15,6 @@ interface Sales {
   retailerMargin: number;
 }
 
-// Product interface that matches the structure of the data
 interface Product {
   id: string;
   title: string;
@@ -31,7 +28,6 @@ interface Product {
   sales: Sales[]; // Array of sales data
 }
 
-// Interface for the Redux state
 interface ProductState {
   products: Product[];
 }
