@@ -1,14 +1,32 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { RootState } from '../../../app/store';
 import styles from './ProductDashboard.module.scss';
 import ProductPanel from './ProductPanel';
 import ProductChart from './ProductChart';
 import ProductTable from './ProductTable';
+import { fetchProductsAsync } from '../productSlice';
 
 const ProductDashboard = () => {
-  const product = useSelector((state: RootState) => state.products.products[0]);
+  const dispatch = useAppDispatch();
+  const { products, status, error } = useAppSelector((state: RootState) => state.products);
+  const product = products && products[0];
   
-  if (!product) return <p>No product available.</p>;
+  useEffect(() => {
+    dispatch(fetchProductsAsync());
+  }, []);
+
+  if (status === 'idle' || status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!products || products.length === 0) {
+    return <div>No products available</div>;
+  }
 
   return (
     <div className={styles.container}>
