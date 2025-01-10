@@ -13,8 +13,9 @@ const ProductDashboard = () => {
   const product = products && products[0];
   
   useEffect(() => {
+    console.log("is mounted")
     dispatch(fetchProductsAsync());
-  }, []);
+  }, [dispatch]);
 
   if (status === 'idle' || status === 'loading') {
     return <div>Loading...</div>;

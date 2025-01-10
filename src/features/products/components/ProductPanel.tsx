@@ -14,7 +14,7 @@ interface ProductPanelProps {
 const ProductPanel = ({ product }: ProductPanelProps) => {
   const renderTag = (tag: string) => {
     return (
-      <div className={styles.tag} key={"tag"}>
+      <div className={styles.tag} key={tag}>
         {tag}
       </div>
     );
