@@ -1,5 +1,5 @@
 import styles from './NavBar.module.scss';
-import logo from '../stackline_logo.svg';
+import logo from './stackline_logo.svg';
 
 const NavBar = () => {
   return (
